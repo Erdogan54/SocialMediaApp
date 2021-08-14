@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/constraint"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        app:layout_constraintStart_toStartOf="@+id/constraint"
+        app:layout_constraintTop_toTopOf="@+id/constraint"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImg"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="3dp"
+                android:src="@drawable/profile_image"
+                app:civ_border_color="#3333"
+                app:civ_border_width="1dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                tools:ignore="ImageContrastCheck" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/orange_circular_bg"
+                app:layout_constraintBottom_toBottomOf="@+id/profileImg"
+                app:layout_constraintEnd_toEndOf="@id/profileImg"
+                app:layout_constraintStart_toStartOf="@+id/profileImg"
+                app:layout_constraintTop_toTopOf="@+id/profileImg"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/nameTxt"
+                app:layout_constraintTop_toTopOf="@id/profileImg"
+                app:layout_constraintBottom_toBottomOf="@+id/profileImg"
+                app:layout_constraintStart_toEndOf="@id/profileImg"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Ebrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/aboutTxt"
+                app:layout_constraintStart_toStartOf="@+id/nameTxt"
+                app:layout_constraintTop_toBottomOf="@id/nameTxt"
+                android:textSize="14sp"
+                android:textColor="@color/dark_grey"
+                android:text="Traveler, Life, Natural"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/menuImg"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_more_vert"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/postImg"
+        app:layout_constraintTop_toBottomOf="@+id/linear1"
+        app:layout_constraintStart_toStartOf="@+id/constraint"
+        app:layout_constraintEnd_toEndOf="@+id/constraint"
+        android:layout_marginTop="16dp"
+        android:layout_width="0dp"
+        android:layout_height="280dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/story_default_image"
+        app:riv_corner_radius="10dip"
+        app:riv_mutate_background="true"
+        app:riv_oval="false"
+        app:riv_tile_mode="clamp" />
+
+    <ImageView
+        android:id="@+id/saveBookImg"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@id/postImg"
+        app:layout_constraintTop_toTopOf="@id/postImg"
+        android:src="@drawable/ic_book_mark"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:tint="@color/white" />
+
+
+
+    <TextView
+        android:id="@+id/likeTxt"
+        android:drawableLeft="@drawable/ic_like"
+        android:padding="10dp"
+        android:drawablePadding="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:text="256"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/postImg"
+        app:layout_constraintTop_toBottomOf="@id/postImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/commentTxt"
+        android:text="120"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/ic_comment"
+        android:padding="10dp"
+        android:drawablePadding="10dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toEndOf="@id/likeTxt"
+        app:layout_constraintTop_toTopOf="@id/likeTxt"
+        app:layout_constraintBottom_toBottomOf="@id/likeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/shareTxt"
+        android:text="48"
+        android:textSize="16sp"
+        android:drawableLeft="@drawable/ic_share"
+        android:padding="10dp"
+        android:drawablePadding="10dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toEndOf="@id/commentTxt"
+        app:layout_constraintTop_toTopOf="@id/commentTxt"
+        app:layout_constraintBottom_toBottomOf="@id/commentTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
